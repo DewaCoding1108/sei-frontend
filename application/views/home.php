@@ -76,9 +76,14 @@
                 <!-- <button class="btn-edit border-2 border-slate-400 rounded-xl px-8 py-1 " title="Edit">
                   <i class="fas fa-edit"></i>
                 </button> -->
-                <button class="btn-delete border-2 border-slate-400 rounded-xl px-8 py-1 " title="Delete">
+                <!-- <button class="btn-delete border-2 border-slate-400 rounded-xl px-8 py-1 " title="Delete">
                   <i class="fas fa-trash text-red-600"></i>
-                </button>
+                </button> -->
+                <form action="<?php echo site_url('proyek/delete/' . $item['id']); ?>" method="post" style="display: inline;">
+                  <button type="submit" onclick="return confirm('Are you sure you want to delete this project?');" class="btn btn-danger border-2 border-slate-400 rounded-xl px-8 py-1">
+                    <i class="fas fa-trash text-red-600"></i>
+                  </button>
+                </form>
               </div>
             </div>
           </li>

@@ -157,4 +157,31 @@ class Proyek extends CI_Controller
     }
     // $this->load->view('update_proyek', $data); // Load the view for the "Add Proyek" page
   }
+
+  public function delete($id)
+  {
+    $restURLProyek = "http://localhost:8080/proyek/" . $id;
+
+    $context = stream_context_create(array(
+      'http' => array(
+        'method'  => 'DELETE',
+        'header'  => 'Content-type: application/json',
+        'ignore_errors' => true
+      )
+    ));
+
+    $response = file_get_contents($restURLProyek, false, $context);
+
+    // Decode response
+    $status_code = $http_response_header[0];
+
+    // Handle response
+    if (strpos($status_code, '200') !== false) {
+      // Redirect with success message
+      redirect('/home');
+    } else {
+      // Redirect with error message
+      redirect('/home');
+    }
+  }
 }

@@ -60,5 +60,7 @@ $route['add_lokasi'] = 'lokasi/add';
 $route['save_lokasi'] = 'lokasi/save';
 $route['proyek/edit/(:num)'] = 'proyek/edit/$1';
 $route['proyek/update/(:num)'] = 'proyek/update/$1';
+$route['proyek/delete/(:num)'] = '';
 $route['lokasi/edit/(:num)'] = 'lokasi/edit/$1';
 $route['lokasi/update/(:num)'] = 'lokasi/update/$1';
+$route['lokasi/delete/(:num)'] = 'lokasi/delete/$1';
